@@ -1,0 +1,17 @@
+{
+  "name": "tetris-bot",
+  "version": "1.0.0",
+  "description": "Top-tier Tetris bot for tetr.io using beam search AI",
+  "main": "src/bot.js",
+  "scripts": {
+    "start": "node src/bot.js",
+    "start:headless": "node src/bot.js --headless",
+    "test:ai": "node src/test_ai.js"
+  },
+  "dependencies": {
+    "puppeteer": "^21.6.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
