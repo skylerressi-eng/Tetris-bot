@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Tetris Bot for tetr.io",
+  "version": "1.0.0",
+  "description": "Top-tier AI bot that plays tetr.io automatically — beam search with T-spin and perfect clear detection.",
+  "permissions": ["storage", "scripting", "activeTab"],
+  "host_permissions": ["https://tetr.io/*", "http://tetr.io/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Tetris Bot"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://tetr.io/*"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["bot-core.js", "injected.js"],
+      "matches": ["https://tetr.io/*"]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tetris Bot</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>TETRIS BOT</h1>
+      <div class="version">v1.0</div>
+    </header>
+
+    <div id="status" class="status status-unknown">
+      <span class="dot"></span>
+      <span id="status-text">Checking…</span>
+    </div>
+
+    <div id="not-tetrio" class="notice hidden">
+      Open <b>tetr.io</b> in this tab, then reopen the popup.
+    </div>
+
+    <div id="controls" class="hidden">
+      <button id="btn-start" class="btn btn-primary">▶ Start Bot</button>
+      <button id="btn-stop" class="btn btn-danger hidden">■ Stop Bot</button>
+
+      <div class="row">
+        <label for="speed">Speed (ms between keys)</label>
+        <input type="range" id="speed" min="5" max="100" value="25" step="5">
+        <span id="speed-value">25ms</span>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><span class="label">Pieces</span><span id="stat-pieces" class="value">0</span></div>
+        <div class="stat"><span class="label">PPS</span><span id="stat-pps" class="value">0.00</span></div>
+        <div class="stat"><span class="label">Lines</span><span id="stat-lines" class="value">0</span></div>
+        <div class="stat"><span class="label">Tetrises</span><span id="stat-tetrises" class="value">0</span></div>
+        <div class="stat"><span class="label">T-spins</span><span id="stat-tspins" class="value">0</span></div>
+        <div class="stat"><span class="label">Perfect Clears</span><span id="stat-pc" class="value">0</span></div>
+      </div>
+
+      <div class="help">
+        <b>Tip:</b> Set DAS=0, ARR=0, SDF=41 in tetr.io Settings → Handling for max speed.
+        Make sure a match is running and the tetr.io tab is focused.
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
